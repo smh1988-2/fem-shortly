@@ -1,0 +1,11 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.heroImage {
+    max-width: 150%;
+    overflow: hidden;
+    height: auto;
+}
