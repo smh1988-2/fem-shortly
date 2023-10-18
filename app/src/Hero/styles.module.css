@@ -9,3 +9,24 @@
     overflow: hidden;
     height: auto;
 }
+
+.heroTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.heroTextContainer h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.heroTextContainer p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--grayish-violet);
+}

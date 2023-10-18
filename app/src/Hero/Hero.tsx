@@ -5,22 +5,19 @@ import styles from "./styles.module.css";
 
 import heroImage from "../../../public/images/illustration-working.svg";
 
-function Hero() {
+function  Hero() {
   return (
     <header className={styles.hero}>
-      
-
       <Image src={heroImage} alt="Hero illustration" className={styles.heroImage} />
 
-      <hgroup>
+      <hgroup className={styles.heroTextContainer}>
         <h1>More than just shorter links</h1>
         <p>
           Build your brand's recognition and get detailed insights on how your
           links are performing.
         </p>
+        <button>Get started</button>
       </hgroup>
-
-      <button>Get started</button>
     </header>
   );
 }
