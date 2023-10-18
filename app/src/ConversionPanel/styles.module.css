@@ -1,0 +1,16 @@
+.conversionPanel {
+    background-color: var(--dark-violet);
+    background-image: url(../../../public/images/bg-boost-desktop.svg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 5rem 2rem
+}
+
+.conversionPanel h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white)
+}
