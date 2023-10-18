@@ -4,11 +4,17 @@ import React from "react";
 import styles from "./styles.module.css";
 
 import heroImage from "../../../public/images/illustration-working.svg";
+import { Button } from "../Buttons/Button";
 
-function  Hero() {
+function Hero() {
   return (
     <header className={styles.hero}>
-      <Image src={heroImage} alt="Hero illustration" className={styles.heroImage} />
+      <Image
+        src={heroImage}
+        alt="Hero illustration"
+        className={styles.heroImage}
+        priority
+      />
 
       <hgroup className={styles.heroTextContainer}>
         <h1>More than just shorter links</h1>
@@ -16,7 +22,7 @@ function  Hero() {
           Build your brand's recognition and get detailed insights on how your
           links are performing.
         </p>
-        <button>Get started</button>
+        <Button type={"rounded"} size={"lg"} content={"Get Started"} />
       </hgroup>
     </header>
   );
