@@ -30,26 +30,28 @@ function CardDeck() {
   ];
 
   return (
-    <section className={styles.cardDeckContainer}>
-      <div className={styles.cardDeckTextContainer}>
-        <h2>Advanced Statistics</h2>
-        <p>
-          Track how your links are performing across the web with our advanced
-          statistics dashboard.
-        </p>
-      </div>
+    <section className={styles.cardDeckSection}>
+      <div className={styles.cardDeckContainer}>
+        <div className={styles.cardDeckTextContainer}>
+          <h2>Advanced Statistics</h2>
+          <p>
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+        </div>
 
-      <div className={styles.cardContainer}>
-        {cardContent.map((card) => {
-          return (
-            <Card
-              title={card.title}
-              key={card.title}
-              content={card.content}
-              icon={card.icon}
-            />
-          );
-        })}
+        <div className={styles.cardContainer}>
+          {cardContent.map((card) => {
+            return (
+              <Card
+                title={card.title}
+                key={card.title}
+                content={card.content}
+                icon={card.icon}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );

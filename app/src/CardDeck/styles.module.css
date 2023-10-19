@@ -1,9 +1,15 @@
-.cardDeckContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.cardDeckSection {
+ 
   background-color: var(--gray);
   padding: 5rem 2rem;
+}
+
+.cardDeckContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .cardDeckTextContainer {
@@ -11,6 +17,8 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 576px;
+  margin: auto;
 }
 
 .cardDeckTextContainer h2 {
@@ -27,7 +35,7 @@
 
 .cardContainer {
   display: grid;
-  gap: 2rem;
+  gap: 7rem;
 }
 
 @media screen and (min-width: 992px) {
