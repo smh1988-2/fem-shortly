@@ -6,11 +6,11 @@
     align-items: center;
     justify-content: center;
     gap: 32px;
-    padding: 5rem 2rem
+    padding: 5rem 2rem;
 }
 
 .conversionPanel h1 {
-    font-size: 2rem;
+    font-size: var(--section-heading);
     font-weight: 600;
     color: var(--white)
 }
