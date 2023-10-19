@@ -1,12 +1,60 @@
 .footerSection {
-    background-color: var(--very-dark-violet);
-    color: var(--white);
-    padding: 2rem 2rem;
+  background-color: var(--very-dark-violet);
+  padding: 3rem 2rem 4rem;
 }
 
 .footerContainer {
-    display: grid;
-    gap: 7rem;
-    max-width: var(--desktop-max-width);
-    margin: auto;
+  display: grid;
+  justify-content: center;
+  gap: 3rem;
+  max-width: var(--desktop-max-width);
+  margin: auto;
+}
+
+.footerLogo {
+  margin: auto;
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+}
+
+.footerNavGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footerNavHeading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footerNavList {
+  color: var(--grayish-violet);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerNavList li a {
+  transition: color var(--hover-time) var(--hover-type);
+}
+
+.footerNavList li a:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.footerIconContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 992px) {
 }
