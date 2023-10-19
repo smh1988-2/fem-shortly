@@ -1,0 +1,45 @@
+.cardDeckSection {
+ 
+  background-color: var(--gray);
+  padding: 5rem 2rem;
+}
+
+.cardDeckContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.cardDeckTextContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 576px;
+  margin: auto;
+}
+
+.cardDeckTextContainer h2 {
+  font-size: var(--section-heading);
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.cardDeckTextContainer p {
+  font-size: var(--body-text);
+  color: var(--grayish-violet);
+  line-height: 1.5;
+}
+
+.cardContainer {
+  display: grid;
+  gap: 7rem;
+}
+
+@media screen and (min-width: 992px) {
+  .cardContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
