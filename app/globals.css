@@ -144,6 +144,8 @@ table {
   --section-heading: 2rem;
   --body-text: 1.1rem;
 
+  --desktop-max-width: 1200px;
+
   --hover-time: 300ms;
   --hover-type: ease
 }

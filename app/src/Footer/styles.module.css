@@ -1,0 +1,12 @@
+.footerSection {
+    background-color: var(--very-dark-violet);
+    color: var(--white);
+    padding: 2rem 2rem;
+}
+
+.footerContainer {
+    display: grid;
+    gap: 7rem;
+    max-width: var(--desktop-max-width);
+    margin: auto;
+}
