@@ -31,6 +31,10 @@
   color: var(--grayish-violet);
 }
 
+.validUrl {
+  outline: none;
+}
+
 .invalidUrl {
   outline: 1px solid var(--red);
 }
@@ -40,6 +44,11 @@
   opacity: 1;
 }
 
+.hideErrorMessage {
+    display: none;
+}
+
 .errorMessage {
-    color: var(--red);
+  color: var(--red);
+  display: block;
 }

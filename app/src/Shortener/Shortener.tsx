@@ -7,24 +7,27 @@ import { Button } from "../Buttons/Button";
 
 function Shortener() {
   const [longUrl, setLongUrl] = useState("");
-  const [validUrl, setValidUrl] = useState(false)
+  const [urlEntered, setUrlEntered] = useState(false);
+  const [isValidUrl, setIsValidUrl] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   function handleSubmit(e: any) {
     e.preventDefault();
+    setUrlEntered(true);
 
-    if (isValidUrl(e.target[0].value)) {
-      setValidUrl(true)
-      console.log("true!");
+    if (checkUrl(e.target[0].value)) {
+      setIsValidUrl(true);
+      setShowError(false)
     } else {
-      setValidUrl(false)
-      console.log("false");
+      setIsValidUrl(false);
+      setShowError(true)
     }
 
     setLongUrl(e.target[0].value);
     shortenUrl();
   }
 
-  function isValidUrl(urlString: string) {
+  function checkUrl(urlString: string) {
     var urlPattern = new RegExp(
       "^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$",
       "i"
@@ -32,14 +35,19 @@ function Shortener() {
     return !!urlPattern.test(urlString);
   }
 
-  function shortenUrl() {}
+  function shortenUrl() {
+    
+  }
 
   return (
     <section className={styles.shortenSection}>
       <div className={styles.shortenContainer}>
         <form onSubmit={(e) => handleSubmit(e)} className={styles.shortenForm}>
-          <input type="text" placeholder="Shorten a link here..." 
-          className={ validUrl ? styles.validUrl : styles.invalidUrl} />
+          <input
+            type="text"
+            placeholder="Shorten a link here..."
+            className={showError ? styles.invalidUrl : styles.validUrl}
+          />
           <Button
             content={"Shorten It!"}
             size="lg"
@@ -47,7 +55,11 @@ function Shortener() {
             type={"submit"}
           />
         </form>
-        <p className={styles.errorMessage}>Please add a valid link</p>
+        <p
+          className={showError ? styles.errorMessage : styles.hideErrorMessage}
+        >
+          Please add a valid link
+        </p>
       </div>
     </section>
   );

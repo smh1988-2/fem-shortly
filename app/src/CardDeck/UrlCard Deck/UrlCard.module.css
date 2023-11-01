@@ -1,0 +1,19 @@
+.urlCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 6px;;
+}
+
+.urlLong {
+    color: var(--dark-blue);
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 1rem;
+}
+
+.urlShort {
+    color: var(--cyan);
+    font-weight: 600;
+}
