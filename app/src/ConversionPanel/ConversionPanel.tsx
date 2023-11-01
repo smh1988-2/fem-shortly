@@ -7,7 +7,7 @@ function ConversionPanel({...props}) {
   return (
     <section className={styles.conversionPanel}>
         <h1>{props.content}</h1>
-        <Button content={"Get Started"} size="lg" type="rounded" />
+        <Button content={"Get Started"} size="lg" border="rounded" />
     </section>
   )
 }

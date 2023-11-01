@@ -1,0 +1,45 @@
+.shortenSection {
+  padding: 5rem 2rem;
+}
+
+.shortenContainer {
+  background: var(--dark-violet);
+  background-image: url("../../../public/images/bg-shorten-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.shortenForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.shortenForm input {
+  padding: 1rem 0.75rem;
+  border-radius: 12px;
+  border: none;
+  font-size: var(--body-text);
+  color: var(--grayish-violet);
+}
+
+.invalidUrl {
+  outline: 1px solid var(--red);
+}
+
+.shortenForm input::placeholder {
+  color: var(--grayish-violet);
+  opacity: 1;
+}
+
+.errorMessage {
+    color: var(--red);
+}

@@ -22,7 +22,7 @@ function Hero() {
           Build your brand's recognition and get detailed insights on how your
           links are performing.
         </p>
-        <Button type={"rounded"} size={"lg"} content={"Get Started"} />
+        <Button border={"rounded"} size={"lg"} content={"Get Started"} />
       </hgroup>
     </header>
   );

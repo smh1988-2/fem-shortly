@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./styles.module.css";
 
 function Card({ ...props }) {
-  console.log("icon", props.icon);
   return (
     <div className={styles.card}>
       <div

@@ -1,15 +1,14 @@
 .cardDeckSection {
- 
   background-color: var(--gray);
   padding: 5rem 2rem;
 }
 
 .cardDeckContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 7rem;
-    max-width: 1000px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  max-width: var(--desktop-max-width);
+  margin: auto;
 }
 
 .cardDeckTextContainer {
