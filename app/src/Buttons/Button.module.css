@@ -16,6 +16,11 @@
     border-radius: 3rem;
 }
 
+.btn.squared {
+  border-radius: .25rem;
+  width: 100%;
+}
+
 .btn:hover {
   cursor: pointer;
   background-color: var(--cyan-hover);
