@@ -1,5 +1,13 @@
 .shortenSection {
   padding: 5rem 2rem;
+  background: var(--gray);
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 50%,
+    var(--gray) 50%,
+    var(--gray) 100%
+  );
 }
 
 .shortenContainer {
@@ -36,7 +44,7 @@
 }
 
 .invalidUrl {
-  outline: 1px solid var(--red);
+  outline: 2px solid var(--red);
 }
 
 .shortenForm input::placeholder {
@@ -45,7 +53,7 @@
 }
 
 .hideErrorMessage {
-    display: none;
+  display: none;
 }
 
 .errorMessage {

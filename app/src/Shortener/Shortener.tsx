@@ -14,17 +14,21 @@ function Shortener() {
   function handleSubmit(e: any) {
     e.preventDefault();
     setUrlEntered(true);
+    setLongUrl(e.target[0].value);
+
+    const newShortUrl = {
+      long: longUrl,
+      short: "g.com",
+    };
 
     if (checkUrl(e.target[0].value)) {
       setIsValidUrl(true);
-      setShowError(false)
+      setShowError(false);
+      shortenUrl(newShortUrl);
     } else {
       setIsValidUrl(false);
-      setShowError(true)
+      setShowError(true);
     }
-
-    setLongUrl(e.target[0].value);
-    shortenUrl();
   }
 
   function checkUrl(urlString: string) {
@@ -35,8 +39,12 @@ function Shortener() {
     return !!urlPattern.test(urlString);
   }
 
-  function shortenUrl() {
-    
+  function shortenUrl(obj: string | object) {
+    let existingEntries = JSON.parse(localStorage.getItem("localUrls"));
+    if (existingEntries == null) existingEntries = [];
+
+    existingEntries.unshift(obj);
+    localStorage.setItem("localUrls", JSON.stringify(existingEntries));
   }
 
   return (

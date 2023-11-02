@@ -1,17 +1,17 @@
-import React from "react";
-import UrlCard from "./UrlCard";
+"use client";
 
+import React from "react";
+
+import UrlCard from "./UrlCard";
 import styles from "./UrlCardDeck.module.css";
 
 function UrlCardDeck() {
-  const shortenUrls = [
-    { long: "https://www.google.com", short: "https://g.co" },
-    { long: "https://www.google.com", short: "https://g.co" },
-  ];
+  let localUrls = JSON.parse(localStorage.getItem("localUrls"));
 
   return (
+    localUrls ? (
     <section className={styles.urlCardDeckSection}>
-      {shortenUrls.map((card) => {
+      {localUrls.map((card: any) => {
         return (
           <div>
             <UrlCard card={card} />
@@ -19,7 +19,8 @@ function UrlCardDeck() {
         );
       })}
     </section>
-  );
+  ) : null
+  )
 }
 
 export default UrlCardDeck;

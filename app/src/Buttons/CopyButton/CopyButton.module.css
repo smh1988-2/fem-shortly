@@ -15,3 +15,11 @@
     cursor: pointer;
     background-color: var(--cyan-hover);
   }
+
+  .copied {
+    background: var(--dark-violet);
+  }
+
+  .copied:hover {
+    background: var(--dark-violet);
+  }
