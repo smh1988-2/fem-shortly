@@ -22,6 +22,8 @@
   gap: 1rem;
   padding: 1.5rem;
   border-radius: 12px;
+  max-width: calc((var(--desktop-max-width)) - 3rem);  
+  margin: auto;
 }
 
 .shortenForm {
@@ -59,4 +61,24 @@
 .errorMessage {
   color: var(--red);
   display: block;
+  font-style: italic;
 }
+
+@media screen and (min-width: 992px) {
+  .shortenSection {
+    padding: 5rem 3rem 2rem;
+  }
+
+  .shortenContainer {
+    background-image: url("../../../public/images/bg-shorten-desktop.svg");
+    padding: 3rem;
+    align-items: start;
+  }
+
+  .shortenForm {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+  }
+  
+}
+

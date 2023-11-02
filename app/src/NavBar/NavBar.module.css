@@ -1,0 +1,42 @@
+.primaryNavigation ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.primaryNavigationLink {
+  text-decoration: none;
+  color: var(--grayish-violet);
+  font-weight: 600;
+  transition: color var(--hover-type) var(--hover-time);
+}
+
+.primaryNavigationLink:hover {
+  color: var(--very-dark-violet);
+}
+
+@media screen and (min-width: 992px) {
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--desktop-max-width);
+    margin: auto;
+    padding: 3rem;
+  }
+
+  .logoMenuContainer {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .primaryNavigation {
+    display: flex;
+  }
+
+  .navButtonsContainer {
+    display: flex;
+    align-items: center;
+  }
+}
