@@ -14,12 +14,13 @@
   background: var(--dark-violet);
   inset: 7rem 2rem;
   display: flex;
+  gap: 2rem;
+  flex-direction: column;
   justify-content: center;
-  border-radius: 6px;
-  padding: 2rem;
+  border-radius: 12px;
+  padding: 3rem 2rem;
   text-align: center;
   transition: transform var(--hover-time) var(--hover-type);
-  /* border-bottom: 2px solid var(--gray); */
 }
 
 .hidden {
@@ -35,13 +36,22 @@
 .primaryNavigationLink {
   text-decoration: none;
   color: var(--white);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   transition: color var(--hover-type) var(--hover-time);
 }
 
 .primaryNavigationLink:hover {
   color: var(--cyan);
+}
+
+.mobileNavButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--grayish-violet);
 }
 
 .navButtonsContainer {
@@ -62,7 +72,15 @@
   }
 
   .primaryNavigation {
+    position: relative;
+    background: transparent;
+    inset: 0;
     display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    text-align: left;
   }
 
   .primaryNavigation ul {
@@ -81,5 +99,13 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+  }
+
+  .menuIcon {
+    display: none;
+  }
+
+  .mobileNavButtonsContainer {
+    display: none;
   }
 }

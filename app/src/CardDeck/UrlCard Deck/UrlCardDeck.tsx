@@ -7,11 +7,11 @@ import styles from "./UrlCardDeck.module.css";
 
 function UrlCardDeck({ success }: { success: any }) {
   const [localUrls, setLocalUrls] = useState(
-    JSON.parse(localStorage.getItem("localUrls") || "")
+    JSON.parse(localStorage.getItem("localUrls"))
   );
 
   useEffect(() => {
-    setLocalUrls(JSON.parse(localStorage.getItem("localUrls") || ""));
+    setLocalUrls(JSON.parse(localStorage.getItem("localUrls")));
   }, [success]);
 
   return localUrls ? (

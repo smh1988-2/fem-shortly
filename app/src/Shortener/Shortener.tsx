@@ -8,12 +8,13 @@ import { Button } from "../Buttons/Button";
 function Shortener({ setSuccess }: { setSuccess:Dispatch<SetStateAction<boolean>>}) {
   const [showError, setShowError] = useState(false);
 
+
   function handleSubmit(e: any) {
     e.preventDefault();
 
     const newShortUrl = {
       long: e.target[0].value,
-      short: "g.com",
+      short: "g.com" + "/" + (Math.random() + 1).toString(36).substring(7),
     };
 
     if (checkUrl(e.target[0].value)) {
@@ -34,7 +35,7 @@ function Shortener({ setSuccess }: { setSuccess:Dispatch<SetStateAction<boolean>
   }
 
   function shortenUrl(obj: string | object) {
-    let existingEntries = JSON.parse(localStorage.getItem("localUrls") || "");
+    let existingEntries = JSON.parse(localStorage.getItem("localUrls"));
     if (existingEntries == null) {
       existingEntries = [];
     }
