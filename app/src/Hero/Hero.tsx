@@ -19,7 +19,7 @@ function Hero() {
       <hgroup className={styles.heroTextContainer}>
         <h1>More than just shorter links</h1>
         <p>
-          Build your brand's recognition and get detailed insights on how your
+          Build your brand&apos;s recognition and get detailed insights on how your
           links are performing.
         </p>
         <Button border={"rounded"} size={"lg"} content={"Get Started"} />
