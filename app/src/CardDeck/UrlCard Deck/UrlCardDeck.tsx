@@ -1,26 +1,32 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import UrlCard from "./UrlCard";
 import styles from "./UrlCardDeck.module.css";
 
-function UrlCardDeck() {
-  let localUrls = JSON.parse(localStorage.getItem("localUrls"));
+function UrlCardDeck({ success }: { success: any }) {
+  const [localUrls, setLocalUrls] = useState(
+    JSON.parse(localStorage.getItem("localUrls"))
+  );
 
-  return (
-    localUrls ? (
+  useEffect(() => {
+    setLocalUrls(JSON.parse(localStorage.getItem("localUrls")));
+  }, [success]);
+
+  return localUrls ? (
     <section className={styles.urlCardDeckSection}>
-      {localUrls.map((card: any) => {
-        return (
-          <div>
-            <UrlCard card={card} />
-          </div>
-        );
-      })}
+      <div className={styles.urlCardDeckContainer}>
+        {localUrls.map((card: { long?: string; short?: string }) => {
+          return (
+            <div>
+              <UrlCard {...card} />
+            </div>
+          );
+        })}
+      </div>
     </section>
-  ) : null
-  )
+  ) : null;
 }
 
 export default UrlCardDeck;

@@ -1,0 +1,111 @@
+.headerContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--desktop-max-width);
+  margin: auto;
+  padding: 3rem;
+}
+
+.primaryNavigation {
+  height: fit-content;
+  position: fixed;
+  background: var(--dark-violet);
+  inset: 7rem 2rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: transform var(--hover-time) var(--hover-type);
+}
+
+.hidden {
+  transform: translateX(150%);
+}
+
+.primaryNavigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.primaryNavigationLink {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color var(--hover-type) var(--hover-time);
+}
+
+.primaryNavigationLink:hover {
+  color: var(--cyan);
+}
+
+.mobileNavButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--grayish-violet);
+}
+
+.navButtonsContainer {
+  display: none;
+}
+
+.menuIcon {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+  .logoMenuContainer {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .primaryNavigation {
+    position: relative;
+    background: transparent;
+    inset: 0;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    text-align: left;
+  }
+
+  .primaryNavigation ul {
+    flex-direction: row;
+  }
+
+  .primaryNavigationLink {
+    color: var(--grayish-violet);
+  }
+
+  .primaryNavigationLink:hover {
+    color: var(--very-dark-violet);
+  }
+
+  .navButtonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .menuIcon {
+    display: none;
+  }
+
+  .mobileNavButtonsContainer {
+    display: none;
+  }
+}

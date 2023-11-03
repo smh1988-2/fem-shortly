@@ -1,5 +1,4 @@
 .copyBtn {
-  width: fit-content;
   background-color: var(--cyan);
   border: none;
   color: var(--white);
@@ -22,4 +21,11 @@
 
   .copied:hover {
     background: var(--dark-violet);
+  }
+
+  @media screen and (min-width: 992px) { 
+    .copyBtn {
+      width: fit-content;
+      padding: .75rem 2rem;
+    }
   }

@@ -35,4 +35,8 @@
       .btn.lg {
         padding: .75rem 1.5rem;
     }
+
+    .btn.squared {
+      border-radius: .5rem;
+    }
   }

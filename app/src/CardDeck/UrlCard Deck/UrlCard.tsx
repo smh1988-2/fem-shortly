@@ -1,14 +1,13 @@
 import React from "react";
 
 import styles from "./UrlCard.module.css";
-import { Button } from "../../Buttons/Button";
 import CopyButton from "../../Buttons/CopyButton/CopyButton";
 
-function UrlCard({ card }) {
+function UrlCard(props:any) {
   return (
     <div className={styles.urlCard}>
-      {card.long && <p className={styles.urlLong}>{card.long}</p>}
-      <p className={styles.urlShort}>{card.short}</p>
+      <p className={styles.urlLong}>{props.long}</p>
+      <p className={styles.urlShort}>{props.short}</p>
       <CopyButton />
     </div>
   );

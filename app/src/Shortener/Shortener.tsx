@@ -1,32 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import styles from "./styles.module.css";
 import { Button } from "../Buttons/Button";
 
-function Shortener() {
-  const [longUrl, setLongUrl] = useState("");
-  const [urlEntered, setUrlEntered] = useState(false);
-  const [isValidUrl, setIsValidUrl] = useState(false);
+function Shortener({ setSuccess }: { setSuccess:Dispatch<SetStateAction<boolean>>}) {
   const [showError, setShowError] = useState(false);
+
 
   function handleSubmit(e: any) {
     e.preventDefault();
-    setUrlEntered(true);
-    setLongUrl(e.target[0].value);
 
     const newShortUrl = {
-      long: longUrl,
-      short: "g.com",
+      long: e.target[0].value,
+      short: "g.com" + "/" + (Math.random() + 1).toString(36).substring(7),
     };
 
     if (checkUrl(e.target[0].value)) {
-      setIsValidUrl(true);
       setShowError(false);
       shortenUrl(newShortUrl);
     } else {
-      setIsValidUrl(false);
+      setSuccess(false)
       setShowError(true);
     }
   }
@@ -41,10 +36,13 @@ function Shortener() {
 
   function shortenUrl(obj: string | object) {
     let existingEntries = JSON.parse(localStorage.getItem("localUrls"));
-    if (existingEntries == null) existingEntries = [];
+    if (existingEntries == null) {
+      existingEntries = [];
+    }
 
     existingEntries.unshift(obj);
     localStorage.setItem("localUrls", JSON.stringify(existingEntries));
+    setSuccess(true)
   }
 
   return (

@@ -1,7 +1,12 @@
 .urlCardDeckSection {
-    background-color: var(--gray);
-    padding: 0rem 2rem 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
+  background-color: var(--gray);
+  padding: 0rem 2rem 2rem;
+}
+
+.urlCardDeckContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: calc((var(--desktop-max-width)) - 3rem);
+  margin: auto;
 }
