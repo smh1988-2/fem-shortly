@@ -20,7 +20,7 @@ function UrlCardDeck({ success }: { success: any }) {
         {localUrls.map((card: { long?: string; short?: string }) => {
           return (
             <div>
-              <UrlCard {...card} />
+              <UrlCard key={card.short} {...card} />
             </div>
           );
         })}
