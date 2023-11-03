@@ -19,8 +19,8 @@ function UrlCardDeck({ success }: { success: any }) {
       <div className={styles.urlCardDeckContainer}>
         {localUrls.map((card: { long?: string; short?: string }) => {
           return (
-            <div>
-              <UrlCard key={card.short} {...card} />
+            <div key={card.short}>
+              <UrlCard {...card} />
             </div>
           );
         })}
