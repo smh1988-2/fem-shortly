@@ -6,9 +6,7 @@ import UrlCard from "./UrlCard";
 import styles from "./UrlCardDeck.module.css";
 
 function UrlCardDeck({ success }: { success: any }) {
-  const [localUrls, setLocalUrls] = useState(
-    JSON.parse(localStorage.getItem("localUrls") || "")
-  );
+  const [localUrls, setLocalUrls] = useState([]);
 
   useEffect(() => {
     setLocalUrls(JSON.parse(localStorage.getItem("localUrls") || ""));
