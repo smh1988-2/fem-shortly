@@ -35,7 +35,7 @@ function Shortener({ setSuccess }: { setSuccess:Dispatch<SetStateAction<boolean>
   }
 
   function shortenUrl(obj: string | object) {
-    let existingEntries = JSON.parse(localStorage.getItem("localUrls"));
+    let existingEntries = JSON.parse(localStorage.getItem("localUrls") || "");
     if (existingEntries == null) {
       existingEntries = [];
     }
