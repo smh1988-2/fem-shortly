@@ -15,8 +15,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site URL](https://main.dk21oo3oocpv4.amplifyapp.com/)
 
 ### Built with
 
@@ -25,9 +24,10 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- Local storage/session storage
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- CSS Module
+- CSS Modules
 
 ### Note
 The URL shortender DOES NOT work. The recommended API is no longer available and I was unable to find a free API with the same features. It just generates a nonsense link.
