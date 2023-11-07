@@ -13,7 +13,7 @@ function UrlCardDeck({ success }: { success: any }) {
   }, [success]);
 
   return (
-    
+    localUrls.length > 0 && (
       <section className={styles.urlCardDeckSection}>
         <div className={styles.urlCardDeckContainer}>
           {localUrls.map((card: { long?: string; short?: string }) => {
@@ -25,7 +25,7 @@ function UrlCardDeck({ success }: { success: any }) {
           })}
         </div>
       </section>
-  
+    )
   );
 }
 
