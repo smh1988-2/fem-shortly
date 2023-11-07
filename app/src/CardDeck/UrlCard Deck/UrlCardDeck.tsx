@@ -9,22 +9,24 @@ function UrlCardDeck({ success }: { success: any }) {
   const [localUrls, setLocalUrls] = useState([]);
 
   useEffect(() => {
-    setLocalUrls(JSON.parse(localStorage.getItem("localUrls") || ""));
+    setLocalUrls(JSON.parse(localStorage.getItem("localUrls") || "[]"));
   }, [success]);
 
-  return localUrls ? (
-    <section className={styles.urlCardDeckSection}>
-      <div className={styles.urlCardDeckContainer}>
-        {localUrls.map((card: { long?: string; short?: string }) => {
-          return (
-            <div key={card.short}>
-              <UrlCard {...card} />
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  ) : null;
+  return (
+    
+      <section className={styles.urlCardDeckSection}>
+        <div className={styles.urlCardDeckContainer}>
+          {localUrls.map((card: { long?: string; short?: string }) => {
+            return (
+              <div key={card.short}>
+                <UrlCard {...card} />
+              </div>
+            );
+          })}
+        </div>
+      </section>
+  
+  );
 }
 
 export default UrlCardDeck;
