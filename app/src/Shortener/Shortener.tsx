@@ -5,23 +5,23 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import styles from "./styles.module.css";
 import { Button } from "../Buttons/Button";
 
-function Shortener({ setSuccess }: { setSuccess:Dispatch<SetStateAction<boolean>>}) {
+function Shortener({
+  setSuccess,
+}: {
+  setSuccess: Dispatch<SetStateAction<boolean>>;
+}) {
   const [showError, setShowError] = useState(false);
-
 
   function handleSubmit(e: any) {
     e.preventDefault();
 
-    const newShortUrl = {
-      long: e.target[0].value,
-      short: "g.com" + "/" + (Math.random() + 1).toString(36).substring(7),
-    };
+    const Url = e.target[0].value;
 
-    if (checkUrl(e.target[0].value)) {
+    if (checkUrl(Url)) {
       setShowError(false);
-      shortenUrl(newShortUrl);
+      shortenUrl(Url);
     } else {
-      setSuccess(false)
+      setSuccess(false);
       setShowError(true);
     }
   }
@@ -34,16 +34,53 @@ function Shortener({ setSuccess }: { setSuccess:Dispatch<SetStateAction<boolean>
     return !!urlPattern.test(urlString);
   }
 
-  function shortenUrl(obj: string | object) {
+  const API_KEY =`${process.env.REACT_APP_API_KEY}`
+
+  console.log("key", `${process.env.REACT_APP_API_KEY}`)
+
+  function shortenUrl(url: string) {
     let existingEntries = JSON.parse(localStorage.getItem("localUrls") || "[]");
     if (existingEntries == null) {
       existingEntries = [];
     }
 
-    existingEntries.unshift(obj);
-    localStorage.setItem("localUrls", JSON.stringify(existingEntries));
-    setSuccess(true)
+    let body = {
+      url: url,
+      domain: `tinyurl.com`,
+      expires_at: null,
+    };
+
+    fetch(
+      `https://api.tinyurl.com/create?api_token=${API_KEY}
+    `,
+      {
+        method: `POST`,
+        headers: {
+          "Content-Type": `application/json`,
+        },
+        body: JSON.stringify(body),
+      }
+    )
+      .then((response) => {
+        if (response.status != 200)
+          throw `There was a problem with the fetch operation. Status Code: ${response.status}`;
+        return response.json();
+      })
+      .then((data) => {
+        const newUrl = {
+          long: data.data.url,
+          short: data.data.tiny_url,
+        };
+
+        existingEntries.unshift(newUrl);
+        localStorage.setItem("localUrls", JSON.stringify(existingEntries));
+        setSuccess(true);
+      })
+      .catch((error) => console.error("error", error));
   }
+
+
+
 
   return (
     <section className={styles.shortenSection}>
